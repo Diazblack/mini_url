@@ -18,6 +18,8 @@ defmodule MiniUrlWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    post "/shorten:url", ShortenUrlController, :create
   end
 
   # Other scopes may use custom stacks.
