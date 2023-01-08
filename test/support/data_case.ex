@@ -28,8 +28,13 @@ defmodule MiniUrl.DataCase do
   end
 
   setup tags do
-    MiniUrl.DataCase.setup_sandbox(tags)
-    :ok
+    :ok = MiniUrl.DataCase.setup_sandbox(tags)
+
+    context = %{
+      params: nil
+    }
+
+    {:ok, context}
   end
 
   @doc """

@@ -23,6 +23,7 @@ defmodule MiniUrlWeb do
 
       import Plug.Conn
       import MiniUrlWeb.Gettext
+      import MiniUrlWeb.ControllerHelpers
       alias MiniUrlWeb.Router.Helpers, as: Routes
     end
   end

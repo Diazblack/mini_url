@@ -5,6 +5,8 @@ defmodule MiniUrlWeb.ErrorHelpers do
 
   use Phoenix.HTML
 
+  alias Ecto.Changeset
+
   @doc """
   Generates tag for inlined form input errors.
   """
@@ -15,6 +17,10 @@ defmodule MiniUrlWeb.ErrorHelpers do
         phx_feedback_for: input_name(form, field)
       )
     end)
+  end
+
+  def format_changeset_errors(changeset) do
+    {:error, %{errors: Changeset.traverse_errors(changeset, &translate_error/1)}}
   end
 
   @doc """

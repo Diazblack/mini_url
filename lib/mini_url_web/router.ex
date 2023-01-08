@@ -19,7 +19,7 @@ defmodule MiniUrlWeb.Router do
 
     get "/", PageController, :index
 
-    post "/shorten:url", ShortenUrlController, :create
+    resources "/shorten", ShortenUrlController, only: [:create]
   end
 
   # Other scopes may use custom stacks.
